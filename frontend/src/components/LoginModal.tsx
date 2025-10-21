@@ -27,7 +27,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose, onSwitchToRegister }) 
       onClose();
 
       // Redirige al HeaderPrivate
-      navigate('/private'); 
+      navigate('/inicio'); 
 
     } catch (err: any) {
       setError(err.message);

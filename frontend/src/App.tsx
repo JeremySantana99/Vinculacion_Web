@@ -3,10 +3,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-
-// Importacion de la interfaz de HeaderPrivate "aqui esta el codigo de la barra superior logeado"
 import HeaderPrivate from './components/HeaderPrivate';
-
+import HomePrivate from './pages/HomePrivate';
 import HomePage from './pages/HomePage';
 import Dashboard from './pages/Dashboard';
 import Tours from './pages/Tours';
@@ -42,8 +40,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/inicio" element={<HomePrivate />} />      {/* <-- aquí */}
 
-          {/* Rutas nuevas (en blanco por ahora, para realizar sus funcionalidades despues) */}
+          {/* estas son las rutas o archivos nuevos que estan en blando para realizar mas adelante */}
           <Route path="/tours" element={<Tours />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/noticias" element={<Noticias />} />
