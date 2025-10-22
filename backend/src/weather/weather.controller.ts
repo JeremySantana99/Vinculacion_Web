@@ -1,4 +1,3 @@
-// backend/src/weather/weather.controller.ts
 import { Controller, Get, Query, Param } from '@nestjs/common';
 import { WeatherService } from './weather.service';
 

@@ -1,4 +1,3 @@
-// src/pages/Ayuda.tsx
 import React from 'react';
 const Ayuda: React.FC = () => {
   return (

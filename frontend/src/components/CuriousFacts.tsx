@@ -1,7 +1,7 @@
-// src/components/CuriousFacts.tsx
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+// este archivo son de los datos curiosos, trate de separar estos tipos de componentes
+// para que el codigo estea mas ordenado y facil de manejar despues si se necesita hacer algun cambio
 const facts = [
   "¿Sabías que La Segua es uno de los humedales más importantes del Ecuador?",
   "En el estuario habitan más de 200 especies de aves.",
@@ -17,7 +17,7 @@ const CuriousFacts: React.FC = () => {
   const prev = () => setIndex((prev) => (prev - 1 + facts.length) % facts.length);
 
   useEffect(() => {
-    const timer = setInterval(next, 3000); // cambia cada 8s
+    const timer = setInterval(next, 3000); // aqui ajusto el tiempo de cambio automatico de cada frase
     return () => clearInterval(timer);
   }, []);
 
@@ -29,7 +29,7 @@ const CuriousFacts: React.FC = () => {
         position: "relative",
       }}
     >
-      {/* Texto principal sin barra de fondo */}
+
       <p
         style={{
           fontSize: "1.3rem",
@@ -43,7 +43,6 @@ const CuriousFacts: React.FC = () => {
         {facts[index]}
       </p>
 
-      {/* Flechas sin fondo circular */}
       <div
         style={{
           position: "absolute",

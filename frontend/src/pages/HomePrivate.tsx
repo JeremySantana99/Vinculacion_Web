@@ -1,22 +1,12 @@
-// src/pages/HomePrivate.tsx
+// esta es la pagina principal cuando el usuario ya ha iniciado sesion, es la pagina que llama a los demas componentes, es la pagina principal
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import WeatherWidget from "../components/WeatherWidget"; // ✅ Widget de clima
-import CuriousFacts from "../components/CuriousFacts"; // ✅ Datos curiosos
-import BirdGallery from "../components/BirdGallery"; // ✅ Galería de aves
-import Footer from "../components/Footer"; // ✅ Footer solo visible aquí
-
-/**
- * HomePrivate.tsx
- * - Hero con botones que enlazan a /tours y /mapa
- * - Carrusel de 3 vídeos (usa videos en /public/videos/*.mp4)
- * - Widget de clima conectado a backend
- * - Datos curiosos y galería de aves
- * - Footer solo visible en la página de inicio
- */
-
-const VIDEO_CHANGE_INTERVAL_MS = 6000; // tiempo entre cambios (6s)
-const CROSSFADE_MS = 600; // duración del fade (ms)
+import WeatherWidget from "../components/WeatherWidget"; 
+import CuriousFacts from "../components/CuriousFacts"; 
+import BirdGallery from "../components/BirdGallery"; 
+import Footer from "../components/Footer"; 
+const VIDEO_CHANGE_INTERVAL_MS = 6000; // aqui podemos cambiat eñ tiempo que puse de los 3 videos.
+const CROSSFADE_MS = 600; 
 
 const HomePrivate: React.FC = () => {
   const videos = ["/videos/aves1.mp4", "/videos/aves2.mp4", "/videos/aves3.mp4"];
@@ -26,11 +16,11 @@ const HomePrivate: React.FC = () => {
   const [fade, setFade] = useState(false);
   const slotRefs = [useRef<HTMLVideoElement | null>(null), useRef<HTMLVideoElement | null>(null)];
 
-  // Preload de videos
+  
   useEffect(() => {
     if (slotRefs[0].current) slotRefs[0].current.src = videos[0];
     if (slotRefs[1].current) slotRefs[1].current.src = videos[1 % videos.length];
-  }, []); // eslint-disable-line
+  }, []); 
 
   // Ciclo automático de cambio de videos
   useEffect(() => {
@@ -44,7 +34,7 @@ const HomePrivate: React.FC = () => {
         nextVideoEl.load();
         nextVideoEl.currentTime = 0;
         const p = nextVideoEl.play();
-        if (p && typeof p.catch === "function") p.catch(() => {});
+        if (p && typeof p.catch === "function") p.catch(() => {});  
       }
 
       setFade(true);
@@ -57,7 +47,7 @@ const HomePrivate: React.FC = () => {
     }, VIDEO_CHANGE_INTERVAL_MS);
 
     return () => clearInterval(timer);
-  }, [index, activeSlot, videos]); // eslint-disable-line
+  }, [index, activeSlot, videos]); 
 
   // Estilos base
   const containerStyle: React.CSSProperties = {
@@ -169,7 +159,7 @@ const HomePrivate: React.FC = () => {
                 marginBottom: 8,
               }}
             >
-              <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a" }}></h3>
+              <h3 style={{ margin: 0, fontSize: 18, color: "#0f172a" }}> </h3>
               <small style={{ color: "#64748b" }}></small>
             </div>
 
@@ -219,7 +209,7 @@ const HomePrivate: React.FC = () => {
         </div>
       </div>
 
-      {/* ✅ FOOTER solo visible en Home */}
+      {/* FOOTER solo visible en Home */}
       <Footer />
     </main>
   );

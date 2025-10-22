@@ -154,4 +154,4 @@ Si tienes problemas:
 3. Asegúrate de que ambos servidores estén corriendo
 4. Revisa que no haya conflictos de puertos
 
-¡La plataforma está lista para ser utilizada! 🚀
+¡La plataforma está lista para ser utilizada! 

@@ -1,7 +1,7 @@
-// src/components/WeatherWidget.tsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+// este archivo es el componente que muestra el clima en mi interfaz de inicio 
+// coloque un api en el backend que obtiene los datos del clima desde openweathermap
 interface WeatherData {
   main?: { temp: number; feels_like?: number; humidity?: number };
   weather?: Array<{ description: string; icon: string }>;
@@ -9,7 +9,8 @@ interface WeatherData {
   name?: string;
 }
 
-const API_BASE = (import.meta as any).env?.VITE_API_BASE || "http://localhost:3000";
+const API_BASE = (import.meta as any).env?.VITE_API_BASE || "http://localhost:3000";   // API base desde variables de entorno
+                                                                                      
 
 const WeatherWidget: React.FC = () => {
   const [data, setData] = useState<WeatherData | null>(null);
@@ -75,7 +76,7 @@ const WeatherWidget: React.FC = () => {
         width: "100%",
       }}
     >
-      {/* Izquierda: clima principal */}
+
       <div style={{ display: "flex", alignItems: "center", gap: 20, flex: 1 }}>
         {icon && (
           <img
@@ -97,7 +98,7 @@ const WeatherWidget: React.FC = () => {
         </div>
       </div>
 
-      {/* Derecha: indicadores distribuidos uniformemente */}
+   
       <div
         style={{
           display: "grid",

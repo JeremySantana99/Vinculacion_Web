@@ -1,7 +1,7 @@
 import React from "react";
 
-const Footer: React.FC = () => {
-  return (
+const Footer: React.FC = () => {     // este componente es solo el componente de la barra inferior o pie de pagina  
+  return (                           // lo puse por separado por si se necesita colocar la misma barra en las otras paginas o opciones.
     <footer
       style={{
         backgroundColor: "white",
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       }}
     >
       <div>Ecuador, Manabí, Chone</div>
-      <div>📧 contacto@biocorredorchone.ec</div>
+      <div> contacto@biocorredorchone.ec</div>
       <div style={{ marginTop: "0.5rem", fontWeight: 600 }}>
         Biocorredor Estuario Río Chone - La Segua - Cordillera El Bálsamo |
         Conservando la vida silvestre del Ecuador

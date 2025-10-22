@@ -1,4 +1,3 @@
-// src/pages/Catalogo.tsx
 import React from 'react';
 const Catalogo: React.FC = () => {
   return (

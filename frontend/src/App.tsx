@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -40,7 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/inicio" element={<HomePrivate />} />      {/* <-- aquí */}
+          <Route path="/inicio" element={<HomePrivate />} />     
 
           {/* estas son las rutas o archivos nuevos que estan en blando para realizar mas adelante */}
           <Route path="/tours" element={<Tours />} />

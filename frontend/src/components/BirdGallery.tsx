@@ -1,5 +1,5 @@
 import React from "react";
-
+// esta es la galeria o fotos de las aves que coloque, lo separe en un componente aparte para tener el codigo mas ordenado
 const birds = [
   {
     name: "Colibrí de la Costa",
@@ -74,7 +74,6 @@ const BirdGallery: React.FC = () => {
         ))}
       </div>
 
-      {/* Frase final */}
       <p
         style={{
           marginTop: "2rem",

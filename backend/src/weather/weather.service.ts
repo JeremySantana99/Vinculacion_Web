@@ -1,9 +1,9 @@
-// backend/src/weather/weather.service.ts
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { ConfigService } from '@nestjs/config';
-
+// este servicio se encarga de obtener los datos del clima desde la API de OpenWeather
+// esto utilizamos en el componente WeatherWidget en el frontend
 @Injectable()
 export class WeatherService {
   constructor(
